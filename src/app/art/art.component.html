@@ -1,0 +1,158 @@
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-card w3-margin-bottom" style="width:100%;min-width:400px;margin-left:-16px">
+  <div class="w3-bar w3-white w3-wide w3-card w3-padding-16">
+    <!-- Stays on the current page when clicked -->
+    <a [title]="'This is the main page!'" routerLink="/art" class="w3-bar-item w3-button"><b>Flushing</b> New York</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <!-- Routes to cart with link provided -->
+      <a routerLink="/cart" class="w3-bar-item w3-button">Cart</a>
+      <a href="https://angular-graphic-design.stackblitz.io/" class="w3-bar-item w3-button">My Store</a>
+      <!-- Routes back to graphic desing with path "/graphic" provided -->
+      <a routerLink="/graphic" class="w3-bar-item w3-button">Graphic Design</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header / JSON data is stored in products.ts file -->
+<br>
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="{{profile.city}}" alt="Architecture">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-grey"><span class="w3-padding w3-black w3-opacity-min"><b>NYC</b></span> <span class="w3-hide-small w3-text-light-grey">from across the river</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section / JSON driven images  -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Features</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">7 Train</div>
+        <img src="{{profile.train}}" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">Asain Food</div>
+        <img src="{{profile.food}}" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">Queens Public Library</div>
+        <img src="{{profile.library}}" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">History</div>
+        <img src="{{profile.history}}" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">Sky View Mall</div>
+        <img src="{{profile.mall}}" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">The Globe</div>
+        <img src="{{profile.globe}}" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">Flushing Meadows</div>
+        <img src="{{profile.park}}" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-grey w3-padding">Main Street</div>
+        <img src="{{profile.main}}" alt="House" style="width:99%">
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section / details are in JSON format from product.ts -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>{{profile.about}}</p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="{{profile.garden}}" alt="Garden" style="width:100%">
+      <h3>Botanical Garden</h3>
+      <p class="w3-opacity">Parks & Recreation</p>
+      <p>{{profile.gardenDetails}}</p>
+
+      <!-- Redirecting to another page + details on hover -->
+      <a [title]="'Click for more details about this park'" routerLink="/details" class="w3-block w3-light-grey w3-button">More Details</a>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="{{profile.map}}" alt="Map" style="width:100%">
+      <h3>Directions</h3>
+      <p class="w3-opacity">Map</p>
+      <p>{{profile.mapDetails}}</p>
+      <!-- Redirecting to another page + details on hover -->
+      <a [title]="'Click for more details about this map'" routerLink="/two" class="w3-block w3-light-grey w3-button">More Details</a>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="{{profile.dinner}}" alt="Dinner" style="width:100%">
+      <h3>Restaurants</h3>
+      <p class="w3-opacity">Food</p>
+      <p>{{profile.dinnerDetails}}</p>
+      <!-- Redirecting to another page path (/details) + details on hover -->
+      <a [title]="'Click to find out about more restaurants'" routerLink="/details" class="w3-block w3-light-grey w3-button">More Details</a>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="{{profile.hotel}}" alt="Hotel" style="width:100%">
+      <h3>Hotels</h3>
+      <p class="w3-opacity">Lodging</p>
+      <p>{{profile.hotelDetails}}</p>
+      <!-- Redirecting to another page path (/two) + details on hover -->
+      <a [title]="'Click for more hotels in Flushing'" routerLink="/two" class="w3-block w3-light-grey w3-button">More Details</a>
+    </div>
+  </div>
+
+  
+<!-- Image of Citifield -->
+<div class="container">
+  <img src="{{profile.citifield}}" class="w3-margin-bottom" style="width:100%">
+    <div class="content w3-hide-small">
+    <h3>Feedback to developer</h3>
+    <h6>Lets get in touch and talk about your next neighborhood portfolio.</h6>
+ 
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <!-- Window alert when clicking submit button -->
+      <button [title]="'Click here to send a message'" (click)="share()">
+    SEND MESSAGE
+  </button>
+
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-grey w3-padding-16" style="margin-left:-3px">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
